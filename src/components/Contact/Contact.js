@@ -125,7 +125,7 @@ const Contact = () => {
                 <div className={styles.contactIcon}>📧</div>
                 <div className={styles.contactDetails}>
                   <strong>Email</strong>
-                  <span>jeconias@email.com</span>
+                  <span>jeconiasrochaa@gmail.com</span>
                 </div>
               </div>
               
@@ -133,7 +133,7 @@ const Contact = () => {
                 <div className={styles.contactIcon}>📱</div>
                 <div className={styles.contactDetails}>
                   <strong>WhatsApp</strong>
-                  <span>(11) 99999-9999</span>
+                  <span>(82) 981845421</span>
                 </div>
               </div>
               
@@ -141,7 +141,7 @@ const Contact = () => {
                 <div className={styles.contactIcon}>📍</div>
                 <div className={styles.contactDetails}>
                   <strong>Localização</strong>
-                  <span>São Paulo, SP</span>
+                  <span>Maceio, AL</span>
                 </div>
               </div>
             </div>

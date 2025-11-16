@@ -32,13 +32,13 @@ const Footer = () => {
     },
     {
       name: 'WhatsApp',
-      url: 'https://wa.me/5511999999999',
+      url: 'https://wa.me/5582981845421',
       icon: <FaWhatsapp />,
       color: '#25D366'
     },
     {
       name: 'Email',
-      url: 'mailto:jeconias@email.com',
+      url: 'mailto:jeconiasrochaa@gmail.com',
       icon: <FaEnvelope />,
       color: '#EA4335'
     }
@@ -82,9 +82,9 @@ const Footer = () => {
           <div className={styles.footerSection}>
             <h4>Contato</h4>
             <div className={styles.contactInfo}>
-              <p>📧 jeconias@email.com</p>
-              <p>📱 (11) 99999-9999</p>
-              <p>📍 São Paulo, SP</p>
+              <p>📧 jeconiasrochaa@gmail.com</p>
+              <p>📱 (82) 98184-5421</p>
+              <p>📍 Maceio, AL</p>
             </div>
           </div>
         </div>

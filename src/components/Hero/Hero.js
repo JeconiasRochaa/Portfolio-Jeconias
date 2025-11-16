@@ -6,7 +6,7 @@ const Hero = () => {
   const [title, setTitle] = useState('');
   const [showCursor, setShowCursor] = useState(true);
   const fullName = "Jeconias";
-  const fullTitle = "DESENVOLVEDOR FULL-STACK";
+  const fullTitle = "DESENVOLVEDOR FRONT-END";
 
   // Efeito de digitação para o nome
   useEffect(() => {
