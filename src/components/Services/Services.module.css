@@ -1,0 +1,141 @@
+.services {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+  color: white;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #FF6B6B, #FFD166);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #B0B0B0;
+  font-weight: 500;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.serviceCard:hover::before {
+  transform: scaleX(1);
+}
+
+.serviceIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #FFD166;
+}
+
+.serviceDescription {
+  color: #B0B0B0;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.serviceFeatures {
+  list-style: none;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.serviceFeatures li {
+  padding: 0.5rem 0;
+  color: #E2E2E2;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.serviceFeatures li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4ECDC4;
+  font-weight: bold;
+}
+
+.serviceButton {
+  background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.serviceButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+@media (max-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .serviceCard {
+    padding: 2rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}

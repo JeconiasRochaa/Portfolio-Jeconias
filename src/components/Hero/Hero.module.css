@@ -1,0 +1,610 @@
+/* Estilos Base do Hero */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Animado */
+.backgroundAnimation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gradientOrb {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 107, 0.15) 0%,
+    rgba(78, 205, 196, 0.1) 30%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+@keyframes floatOrb {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+    opacity: 0.8;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+    opacity: 0.4;
+  }
+}
+
+/* Container Principal */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Conteúdo de Texto */
+.textContent {
+  text-align: left;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+  color: #4ecdc4;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.wave {
+  font-size: 1.5rem;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 0%, #ffd166 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #e2e2e2;
+  min-height: 2.5rem;
+}
+
+.cursor {
+  color: #ff6b6b;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #b0b0b0;
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+
+.highlight {
+  color: #ffd166;
+  font-weight: 600;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffd166, transparent);
+  opacity: 0.5;
+}
+
+/* Botões de Ação */
+.actionButtons {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  position: relative;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+  box-shadow: 0 5px 20px rgba(255, 107, 107, 0.3);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: white;
+  border: 2px solid #4ecdc4;
+  box-shadow: 0 5px 20px rgba(78, 205, 196, 0.2);
+}
+
+.buttonHover {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+  z-index: -1;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-3px);
+}
+
+.primaryButton:hover {
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5);
+}
+
+.secondaryButton:hover {
+  background: rgba(78, 205, 196, 0.1);
+  box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
+}
+
+.primaryButton:hover .buttonHover,
+.secondaryButton:hover .buttonHover {
+  left: 100%;
+}
+
+.buttonText {
+  position: relative;
+  z-index: 2;
+}
+
+/* Estatísticas */
+.stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+  padding: 1rem;
+  min-width: 100px;
+}
+
+.statNumber {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffd166;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* Seção Visual */
+.visualContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatarContainer {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  z-index: 2;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.avatarMain {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 60px rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatarEmoji {
+  font-size: 5rem;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
+}
+
+.avatarGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #ffd166);
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.3;
+  z-index: 1;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+/* Sistema Orbital */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.orbitalItem {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  transform: rotate(calc(360deg / 4 * var(--i))) translate(225px) rotate(calc(-360deg / 4 * var(--i)));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  animation: pointFloat 4s ease-in-out infinite calc(var(--i) * 0.5s);
+}
+
+@keyframes pointFloat {
+  0%, 100% {
+    transform: rotate(calc(360deg / 4 * var(--i))) translate(225px) rotate(calc(-360deg / 4 * var(--i))) scale(1);
+  }
+  50% {
+    transform: rotate(calc(360deg / 4 * var(--i))) translate(225px) rotate(calc(-360deg / 4 * var(--i))) scale(1.1);
+  }
+}
+
+.orbitalItem:hover {
+  background: rgba(255, 107, 107, 0.2);
+  transform: rotate(calc(360deg / 4 * var(--i))) translate(225px) rotate(calc(-360deg / 4 * var(--i))) scale(1.2);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+/* Indicador de Scroll */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  z-index: 2;
+}
+
+.mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid #b0b0b0;
+  border-radius: 15px;
+  position: relative;
+  margin: 0 auto 0.5rem;
+}
+
+.wheel {
+  width: 3px;
+  height: 8px;
+  background: #ff6b6b;
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(12px);
+    opacity: 0;
+  }
+}
+
+.scrollText {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .textContent {
+    text-align: center;
+  }
+  
+  .name {
+    font-size: 3.5rem;
+  }
+  
+  .avatarContainer {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .avatar {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .avatarEmoji {
+    font-size: 4rem;
+  }
+  
+  .orbit {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .orbitalItem {
+    transform: rotate(calc(360deg / 4 * var(--i))) translate(200px) rotate(calc(-360deg / 4 * var(--i)));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 20px 40px;
+  }
+  
+  .name {
+    font-size: 2.8rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+  }
+  
+  .actionButtons {
+    justify-content: center;
+  }
+  
+  .stats {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .statNumber {
+    font-size: 2rem;
+  }
+  
+  .avatarContainer {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .avatar {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .avatarEmoji {
+    font-size: 3.5rem;
+  }
+  
+  .orbit {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .orbitalItem {
+    transform: rotate(calc(360deg / 4 * var(--i))) translate(175px) rotate(calc(-360deg / 4 * var(--i)));
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2.2rem;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .avatarContainer {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .avatar {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .avatarEmoji {
+    font-size: 3rem;
+  }
+  
+  .orbit {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .orbitalItem {
+    transform: rotate(calc(360deg / 4 * var(--i))) translate(150px) rotate(calc(-360deg / 4 * var(--i)));
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
